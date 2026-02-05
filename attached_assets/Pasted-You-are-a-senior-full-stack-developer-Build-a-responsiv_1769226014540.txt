@@ -1,0 +1,103 @@
+You are a senior full-stack developer.
+
+Build a responsive, mobile-first web application called “AgroPulse+”, designed for Indian farmers.
+
+TECH STACK
+- Frontend: HTML, CSS, JavaScript (no heavy frameworks, keep it simple)
+- Backend: Python Flask
+- AI: Placeholder endpoints for crop & disease detection (mock responses)
+- Language: Tamil-first UI with English fallback
+
+CORE REQUIREMENTS
+
+1. LANDING PAGE
+- Clean, farmer-friendly UI
+- Green agriculture theme
+- App name: AgroPulse+
+- Tagline: “Smart Crop Prices & Live AI Scanning in Tamil”
+- Navigation:
+  - Home
+  - Crop Prices
+  - Live Scan
+  - Crop News
+  - Language Toggle (Tamil / English)
+
+2. CROP PRICE MODULE
+- Page showing crop prices in table format
+- Columns:
+  - Crop Name
+  - Market Location
+  - Today’s Price
+  - Price Trend (↑ / ↓)
+- Use mock JSON data
+- Add search and filter by crop
+
+3. LIVE SCAN MODULE (IMPORTANT)
+- Use browser camera (MediaDevices API)
+- Button: “Start Live Scan”
+- Open camera feed
+- Capture frame every 1–2 seconds
+- Send frame to backend API endpoint
+- Display result:
+  - Crop Name
+  - Disease Name
+  - Severity
+  - Remedy
+- Show confidence percentage
+- Display results in Tamil by default
+
+4. AI SCAN BACKEND (MOCK)
+- Flask endpoint: /scan
+- Accept image frame
+- Return mock JSON like:
+  {
+    "crop": "Rice",
+    "disease": "Leaf Blight",
+    "severity": "Medium",
+    "remedy": "Neem oil spray recommended",
+    "confidence": 92
+  }
+
+5. CROP NEWS MODULE
+- Display latest agriculture news cards
+- Crop-specific news
+- Use mock data
+- Short summaries (2–3 lines)
+- Tamil language support
+
+6. LANGUAGE SUPPORT
+- Default language: Tamil
+- Toggle between Tamil and English
+- Store selected language in browser localStorage
+- All labels and outputs must change dynamically
+
+7. UI/UX REQUIREMENTS
+- Large buttons and icons
+- Minimal text
+- High contrast
+- Works smoothly on mobile
+- Loading indicator during scan
+- Friendly alerts and messages
+
+8. PROJECT STRUCTURE
+- /static
+  - css/style.css
+  - js/app.js
+- /templates
+  - index.html
+  - prices.html
+  - scan.html
+  - news.html
+- app.py (Flask backend)
+
+9. EXTRA QUALITY POINTS
+- Add disclaimer for AI results
+- Show “Low confidence” warning if confidence < 70%
+- Comment code clearly
+- Keep everything hackathon-ready and demo-friendly
+
+OUTPUT EXPECTATION
+- Generate complete working code
+- Clear folder structure
+- Clean UI
+- Ready to run in Replit

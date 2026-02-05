@@ -1,0 +1,195 @@
+You are a senior full-stack + AI engineer working on a production-grade agriculture platform.
+
+Build the COMPLETE version of “AgroPulse+” — a Tamil-first smart agriculture web application for Indian farmers.
+
+GOAL
+Create a fully functional, end-to-end system including:
+- Frontend (React + TypeScript)
+- Backend (FastAPI or Flask)
+- Real APIs
+- AI crop & disease detection pipeline
+- Tamil localization
+- Demo-ready deployment
+
+====================================
+SYSTEM OVERVIEW
+====================================
+
+AgroPulse+ is a mobile-first web app that provides:
+1. Real-time crop prices
+2. Agriculture news & government schemes
+3. Live camera-based crop & disease detection
+4. Tamil-first UI with voice support
+
+====================================
+TECH STACK
+====================================
+
+Frontend:
+- React (Vite) + TypeScript
+- Tailwind CSS v4 (green agriculture theme)
+- Shadcn/UI (Radix-based components)
+- Lucide-React icons
+- Wouter for routing
+
+Backend:
+- Python FastAPI
+- REST APIs
+- CORS enabled
+
+AI / ML:
+- Pretrained CNN (MobileNet / EfficientNet)
+- PlantVillage dataset (assume pretrained model)
+- Image classification for crop & disease
+- Confidence score output
+
+Database:
+- SQLite or PostgreSQL (simple schema)
+- Tables for crops, prices, news, scan history
+
+External APIs:
+- Crop price data (mock Agmarknet-style data if real API unavailable)
+- Weather API (optional)
+
+====================================
+FRONTEND REQUIREMENTS
+====================================
+
+1. LANDING PAGE
+- App name: AgroPulse+
+- Tagline: “Smart Crop Prices & Live AI Scanning in Tamil”
+- Navigation:
+  Home | Crop Prices | Live Scan | Crop News | Language Toggle
+
+2. LANGUAGE SYSTEM
+- Default language: Tamil
+- Toggle Tamil / English
+- All labels AND data must translate
+- Use name / nameTa pattern in data
+- Store language in localStorage
+
+3. CROP PRICE PAGE
+- Fetch prices from backend API
+- Table with:
+  Crop | Market | Price | Trend
+- Search and filter
+- Tamil Nadu mandis (Thanjavur, Erode, Coimbatore)
+
+4. LIVE SCAN PAGE (CORE FEATURE)
+- Use MediaDevices.getUserMedia()
+- Show live camera feed
+- Capture frame every 1–2 seconds
+- Send frame to backend /api/scan
+- Show loading state
+- Display result:
+  Crop name
+  Disease name
+  Severity
+  Remedy
+  Confidence %
+
+- If confidence < 70% → show warning
+- Tamil text + optional voice output
+
+5. NEWS PAGE
+- Fetch agriculture news from backend
+- Card-based layout
+- Crop-specific news
+- Fully bilingual content
+
+====================================
+BACKEND REQUIREMENTS
+====================================
+
+Create FastAPI backend with these endpoints:
+
+1. GET /api/prices
+- Returns crop price data
+- Includes Tamil & English fields
+
+2. GET /api/news
+- Returns agriculture news
+- Includes Tamil summaries
+
+3. POST /api/scan
+- Accepts image (base64 or multipart)
+- Runs AI inference
+- Returns:
+  {
+    crop,
+    cropTa,
+    disease,
+    diseaseTa,
+    severity,
+    remedy,
+    remedyTa,
+    confidence
+  }
+
+4. GET /api/health
+- Simple health check
+
+====================================
+AI LOGIC
+====================================
+
+- Load pretrained crop/disease model
+- Preprocess incoming image
+- Predict crop and disease
+- Calculate confidence score
+- Map prediction → Tamil labels
+- Return JSON response
+
+If model unavailable:
+- Implement clean fallback mock with same interface
+
+====================================
+DESIGN & UX
+====================================
+
+- Mobile-first
+- Large buttons
+- High contrast
+- Minimal text
+- Green / earthy theme
+- Clear AI disclaimer:
+  “AI-based suggestion – consult agriculture officer if severe”
+
+====================================
+PROJECT STRUCTURE
+====================================
+
+/frontend
+  /src
+    /pages
+    /components
+    /data
+    /i18n
+  main.tsx
+  App.tsx
+
+/backend
+  main.py
+  models/
+  services/
+  requirements.txt
+
+====================================
+FINAL OUTPUT EXPECTATIONS
+====================================
+
+- Fully working frontend
+- Fully working backend APIs
+- Camera scanning works end-to-end
+- Clean, commented code
+- Ready to run in Replit
+- Demo-ready for hackathon or final evaluation
+
+DO NOT:
+- Skip backend logic
+- Leave placeholders without explanation
+- Hardcode language strings without translation structure
+
+DELIVER:
+- Complete runnable project
+- Clear instructions to run frontend and backend
